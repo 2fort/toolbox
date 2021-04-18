@@ -93,7 +93,7 @@ module.exports = {
       title: 'Toolbox',
       template: './src/index.ejs',
       inject: 'body',
-      filename: 'index.html',
+      filename: '200.html',
       withManifest: withFavicons,
       NODE_ENV: 'production',
     }),
