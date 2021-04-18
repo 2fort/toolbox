@@ -1,0 +1,59 @@
+{
+  "plugins": [
+    [
+      "transform-imports",
+      {
+        "date-fns": {
+          "transform": "date-fns/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ],
+  "presets": [
+    ["@babel/preset-react", {
+      "runtime": "automatic"
+    }]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 Chrome versions"
+              ]
+            },
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        ["transform-react-remove-prop-types", {
+          "ignoreFilenames": ["node_modules"]
+        }],
+        "babel-plugin-jsx-remove-data-test-id"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": "> 1%, not dead, not IE > 0",
+            "loose": true,
+            "modules": false,
+            "useBuiltIns": "usage",
+            "corejs": 3,
+            "debug": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": ["@babel/preset-env"]
+    }
+  }
+}
