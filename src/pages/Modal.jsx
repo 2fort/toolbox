@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Modal from '../components/Modal';
+import Button from '../components/layout/Button';
 
 const useStyles = createUseStyles({
   title: {
@@ -9,15 +10,12 @@ const useStyles = createUseStyles({
 
   modalTitle: {
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 50,
+    fontSize: '1.5rem',
   },
 
   modalContent: {
-    marginBottom: 30,
-  },
-
-  closeBtn: {
-    width: '100%',
+    marginBottom: 50,
   },
 });
 
@@ -35,9 +33,9 @@ const ModalPage = () => {
         A simple modal component
       </div>
 
-      <button type="button" onClick={triggerModal}>
+      <Button type="button" onClick={triggerModal}>
         Open modal
-      </button>
+      </Button>
 
       {modalOpened && (
         <Modal onClose={triggerModal}>
@@ -49,9 +47,9 @@ const ModalPage = () => {
             Content of Modal
           </div>
 
-          <button type="button" onClick={triggerModal} className={classes.closeBtn}>
+          <Button onClick={triggerModal}>
             Close
-          </button>
+          </Button>
         </Modal>
       )}
     </div>

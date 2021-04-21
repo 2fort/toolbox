@@ -5,6 +5,6 @@ afterEach(cleanup);
 
 test('renders header', () => {
   const { getByText } = render(<Header />);
-  const button1 = getByText(/Main/i);
-  expect(button1).toBeInTheDocument();
+  const logo = getByText(/Toolbox/i);
+  expect(logo).toBeInTheDocument();
 });

@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import PropTypes from 'prop-types';
-
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -24,6 +23,9 @@ const useStyles = createUseStyles({
     maxWidth: '500px',
     position: 'relative',
     background: '#FFF',
+    maxHeight: '100%',
+    overflowY: 'auto',
+    borderRadius: 3,
   },
 
   close: {
@@ -41,24 +43,21 @@ const Modal = ({ children, onClose }) => {
 
   useEffect(() => {
     const targetElement = modalRef.current;
-
-    function handleClickOutside(event) {
-      if (targetElement && !targetElement.contains(event.target)) {
-        onClose();
-      }
-    }
-
-    document.addEventListener('click', handleClickOutside, true);
     disableBodyScroll(targetElement);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
       enableBodyScroll(targetElement);
     };
-  }, [onClose]);
+  }, []);
+
+  function detectClick(event) {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      onClose();
+    }
+  }
 
   return (
-    <div className={classes.backdrop}>
+    <div className={classes.backdrop} onClickCapture={detectClick}>
       <div ref={modalRef} className={classes.body}>
         <button
           type="button"

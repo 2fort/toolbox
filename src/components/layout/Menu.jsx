@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme) => ({
   menu: {
     width: 250,
+    minWidth: 250,
     overflowY: 'auto',
-    borderRight: '1px solid gray',
+    background: theme.palette.secondary,
+    borderRadius: 10,
   },
 
   ul: {
@@ -16,8 +18,22 @@ const useStyles = createUseStyles({
     '& li': {
       marginBottom: 20,
     },
+
+    '& li:last-child': {
+      marginBottom: 0,
+    },
   },
-});
+
+  link: {
+    color: theme.palette.headline,
+    textDecoration: 'none',
+    fontWeight: 'bold',
+  },
+
+  activeLink: {
+    color: theme.palette.button,
+  },
+}));
 
 const Menu = () => {
   const classes = useStyles();
@@ -26,10 +42,14 @@ const Menu = () => {
     <div className={classes.menu}>
       <ul className={classes.ul}>
         <li>
-          <NavLink to="/modal">Modal</NavLink>
+          <NavLink to="/modal" className={classes.link} activeClassName={classes.activeLink}>
+            Modal
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/sidebar">Sidebar</NavLink>
+          <NavLink to="/sidebar" className={classes.link} activeClassName={classes.activeLink}>
+            Sidebar
+          </NavLink>
         </li>
       </ul>
     </div>

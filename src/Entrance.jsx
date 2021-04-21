@@ -11,14 +11,18 @@ import Sidebar from './pages/Sidebar';
 const useStyles = createUseStyles({
   entrance: {
     display: 'flex',
-    flex: 1,
+    alignItems: 'flex-start',
+    // flex: 1,
 
     '& > div:first-child': {
       padding: 20,
     },
 
     '& > div:last-child': {
-      padding: 25,
+      paddingTop: 20,
+      paddingLeft: 40,
+      paddingRight: 50,
+      width: '100%',
     },
   },
 });
