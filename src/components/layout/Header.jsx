@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles((theme) => ({
   header: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     padding: 20,
 
     '& > *': {
@@ -18,6 +18,13 @@ const useStyles = createUseStyles((theme) => ({
     textDecoration: 'none',
     color: theme.palette.headline,
   },
+
+  repoLink: {
+    marginLeft: 'auto',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    color: theme.palette.headline,
+  },
 }));
 
 const Header = () => {
@@ -28,6 +35,14 @@ const Header = () => {
       <Link to="/" className={classes.title}>
         Toolbox
       </Link>
+      <a
+        href="https://github.com/2fort/toolbox"
+        className={classes.repoLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Github
+      </a>
     </div>
   );
 };

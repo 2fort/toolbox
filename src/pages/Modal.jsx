@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Modal from '../components/Modal';
 import Button from '../components/layout/Button';
+import { useTitle } from '../shared/hooks';
 
 const useStyles = createUseStyles({
   title: {
@@ -22,6 +23,7 @@ const useStyles = createUseStyles({
 const ModalPage = () => {
   const classes = useStyles();
   const [modalOpened, setModalOpen] = useState(false);
+  useTitle('Modal');
 
   function triggerModal() {
     setModalOpen(!modalOpened);
