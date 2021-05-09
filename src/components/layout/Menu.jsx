@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
+import classNames from 'classnames';
 
 const useStyles = createUseStyles((theme) => ({
   menu: {
@@ -35,6 +36,12 @@ const useStyles = createUseStyles((theme) => ({
       content: '"⮞ "',
     },
   },
+
+  soonLink: {
+    '&::after': {
+      content: '" 🔜"',
+    },
+  },
 }));
 
 const Menu = () => {
@@ -62,6 +69,51 @@ const Menu = () => {
           <NavLink to="/calendar" className={classes.link} activeClassName={classes.activeLink}>
             Calendar
           </NavLink>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className={classNames(classes.link, classes.soonLink)}
+            activeClassName={classes.activeLink}
+          >
+            SVG color change
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className={classNames(classes.link, classes.soonLink)}
+            activeClassName={classes.activeLink}
+          >
+            Video player
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className={classNames(classes.link, classes.soonLink)}
+            activeClassName={classes.activeLink}
+          >
+            Autocomplete
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className={classNames(classes.link, classes.soonLink)}
+            activeClassName={classes.activeLink}
+          >
+            Custom checkbox
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className={classNames(classes.link, classes.soonLink)}
+            activeClassName={classes.activeLink}
+          >
+            Clipboard image
+          </Link>
         </li>
       </ul>
     </div>
