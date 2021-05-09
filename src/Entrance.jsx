@@ -7,6 +7,7 @@ import Route404 from './components/layout/Route404';
 import Main from './pages/Main';
 import Modal from './pages/Modal';
 import Sidebar from './pages/Sidebar';
+import ImageZoom from './pages/ImageZoom';
 
 const useStyles = createUseStyles({
   entrance: {
@@ -19,7 +20,6 @@ const useStyles = createUseStyles({
     },
 
     '& > div:last-child': {
-      paddingTop: 20,
       paddingLeft: 40,
       paddingRight: 50,
       width: '100%',
@@ -36,6 +36,7 @@ const Entrance = () => {
       <div className={classes.entrance}>
         <Menu />
         <Switch>
+          <Route path="/image-zoom" component={ImageZoom} />
           <Route path="/sidebar" component={Sidebar} />
           <Route path="/modal" component={Modal} />
           <Route path="/" component={Main} />

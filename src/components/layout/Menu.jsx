@@ -51,6 +51,11 @@ const Menu = () => {
             Sidebar
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/image-zoom" className={classes.link} activeClassName={classes.activeLink}>
+            Image Zoom
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
