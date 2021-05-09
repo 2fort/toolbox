@@ -31,7 +31,9 @@ const useStyles = createUseStyles((theme) => ({
   },
 
   activeLink: {
-    color: theme.palette.button,
+    '&::before': {
+      content: '"⮞ "',
+    },
   },
 }));
 
@@ -54,6 +56,11 @@ const Menu = () => {
         <li>
           <NavLink to="/image-zoom" className={classes.link} activeClassName={classes.activeLink}>
             Image Zoom
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/calendar" className={classes.link} activeClassName={classes.activeLink}>
+            Calendar
           </NavLink>
         </li>
       </ul>

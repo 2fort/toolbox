@@ -8,6 +8,7 @@ import Main from './pages/Main';
 import Modal from './pages/Modal';
 import Sidebar from './pages/Sidebar';
 import ImageZoom from './pages/ImageZoom';
+import Calendar from './pages/Calendar';
 
 const useStyles = createUseStyles({
   entrance: {
@@ -36,6 +37,7 @@ const Entrance = () => {
       <div className={classes.entrance}>
         <Menu />
         <Switch>
+          <Route path="/calendar" component={Calendar} />
           <Route path="/image-zoom" component={ImageZoom} />
           <Route path="/sidebar" component={Sidebar} />
           <Route path="/modal" component={Modal} />
