@@ -71,10 +71,14 @@ const Menu = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/checkbox" className={classes.link} activeClassName={classes.activeLink}>
+            Custom checkbox
+          </NavLink>
+        </li>
+        <li>
           <Link
             to="/"
             className={classNames(classes.link, classes.soonLink)}
-            activeClassName={classes.activeLink}
           >
             SVG color change
           </Link>
@@ -83,7 +87,6 @@ const Menu = () => {
           <Link
             to="/"
             className={classNames(classes.link, classes.soonLink)}
-            activeClassName={classes.activeLink}
           >
             Video player
           </Link>
@@ -92,7 +95,6 @@ const Menu = () => {
           <Link
             to="/"
             className={classNames(classes.link, classes.soonLink)}
-            activeClassName={classes.activeLink}
           >
             Autocomplete
           </Link>
@@ -101,16 +103,6 @@ const Menu = () => {
           <Link
             to="/"
             className={classNames(classes.link, classes.soonLink)}
-            activeClassName={classes.activeLink}
-          >
-            Custom checkbox
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/"
-            className={classNames(classes.link, classes.soonLink)}
-            activeClassName={classes.activeLink}
           >
             Clipboard image
           </Link>

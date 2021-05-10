@@ -9,6 +9,7 @@ import Modal from './pages/Modal';
 import Sidebar from './pages/Sidebar';
 import ImageZoom from './pages/ImageZoom';
 import Calendar from './pages/Calendar';
+import Checkbox from './pages/Checkbox';
 
 const useStyles = createUseStyles({
   entrance: {
@@ -37,6 +38,7 @@ const Entrance = () => {
       <div className={classes.entrance}>
         <Menu />
         <Switch>
+          <Route path="/checkbox" component={Checkbox} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/image-zoom" component={ImageZoom} />
           <Route path="/sidebar" component={Sidebar} />
