@@ -58,7 +58,7 @@ const useStyles = createUseStyles((theme) => ({
 
   currentDay: {
     fontWeight: 'bold',
-    color: theme.palette.button,
+    color: `${theme.palette.button}!important`,
   },
 
   selectedDay: {

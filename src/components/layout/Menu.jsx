@@ -76,12 +76,9 @@ const Menu = () => {
           </NavLink>
         </li>
         <li>
-          <Link
-            to="/"
-            className={classNames(classes.link, classes.soonLink)}
-          >
+          <NavLink to="/svg-color-change" className={classes.link} activeClassName={classes.activeLink}>
             SVG color change
-          </Link>
+          </NavLink>
         </li>
         <li>
           <Link

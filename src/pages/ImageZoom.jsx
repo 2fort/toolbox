@@ -4,6 +4,10 @@ import largeImg from '../images/shio-yang-KLUUozjf9zI-unsplash.jpg';
 import ImageZoom from '../components/ImageZoom';
 
 const useStyles = createUseStyles({
+  text: {
+    lineHeight: '24px',
+  },
+
   main: {
     minHeight: 'calc(100vh - 76px)',
     display: 'flex',
@@ -36,10 +40,12 @@ const ImageZoomPage = () => {
 
   return (
     <div className={classes.main}>
-      Scroll to zoom <br />
-      Double click for maximum zoom, dblclick again for no zoom (100% scale)
+      <div className={classes.text}>
+        Test image 4096 x 6144.<br />
+        Scroll to zoom. Double click for maximum zoom, dblclick again for no zoom.
+      </div>
 
-      <div className={classes.scale}>{imageZoom.toFixed(2) * 100}%</div>
+      <div className={classes.scale}>{Math.round(imageZoom * 100)}%</div>
       <ImageZoom
         imageSrc={largeImg}
         setImageInfo={setImageZoom}

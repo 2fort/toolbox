@@ -10,6 +10,7 @@ import Sidebar from './pages/Sidebar';
 import ImageZoom from './pages/ImageZoom';
 import Calendar from './pages/Calendar';
 import Checkbox from './pages/Checkbox';
+import SvgColor from './pages/SvgColor';
 
 const useStyles = createUseStyles({
   entrance: {
@@ -38,6 +39,7 @@ const Entrance = () => {
       <div className={classes.entrance}>
         <Menu />
         <Switch>
+          <Route path="/svg-color-change" component={SvgColor} />
           <Route path="/checkbox" component={Checkbox} />
           <Route path="/calendar" component={Calendar} />
           <Route path="/image-zoom" component={ImageZoom} />

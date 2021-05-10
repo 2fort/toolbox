@@ -60,7 +60,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|png|jpg|jpeg|gif)$/,
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
         exclude: /node_modules/,
         use: [
           {

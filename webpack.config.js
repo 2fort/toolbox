@@ -48,7 +48,12 @@ const config = {
         ],
       },
       {
-        test: /\.(svg|png|jpg|jpeg|gif)$/,
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -104,14 +109,6 @@ const config = {
     historyApiFallback: true,
     stats: 'minimal',
     port,
-    proxy: {
-      // '/web': {
-      //  target: '',
-      //  changeOrigin: false,
-      //  secure: false,
-      //  logLevel: 'debug',
-      // },
-    },
   },
 };
 
