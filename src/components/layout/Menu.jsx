@@ -33,7 +33,8 @@ const useStyles = createUseStyles((theme) => ({
 
   activeLink: {
     '&::before': {
-      content: '"⮞ "',
+      content: '"➡️"',
+      marginRight: 10,
     },
   },
 
