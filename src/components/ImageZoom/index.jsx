@@ -9,6 +9,7 @@ const useStyles = createUseStyles({
     zIndex: 100,
     transformOrigin: '0 0',
     visibility: 'hidden',
+    // touchAction: 'manipulation',
   },
 
   container: {
