@@ -104,6 +104,26 @@ export default class ImageInteraction {
     this.container.addEventListener('mousemove', this.handleMouseMove);
     this.container.addEventListener('mouseup', this.handleMouseUp);
     this.container.addEventListener('mouseleave', this.handleMouseUp);
+
+    // resize handlers
+    this.resizePointer = 0;
+    this.firstTime = true;
+
+    function delayedImageInit() {
+      if (this.firstTime) {
+        this.firstTime = false;
+        return;
+      }
+
+      this.init(this.img);
+    }
+
+    this.resizeObserver = new ResizeObserver(() => {
+      clearTimeout(this.resizePointer);
+      this.resizePointer = setTimeout(delayedImageInit.bind(this), 200);
+    });
+
+    this.resizeObserver.observe(this.container);
   }
 
   init(img) {
@@ -126,6 +146,8 @@ export default class ImageInteraction {
     this.container.removeEventListener('mousemove', this.handleMouseMove);
     this.container.removeEventListener('mouseup', this.handleMouseUp);
     this.container.removeEventListener('mouseleave', this.handleMouseUp);
+
+    this.resizeObserver.unobserve(this.container);
   }
 
   apply(params) {
